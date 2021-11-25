@@ -74,7 +74,7 @@ ObservedList(value=["You're handsome"])
 
 ## API
 
-The data source is given by ZenQuotes.io
+The data source is given by [ZenQuotes.io](https://zenquotes.io/)
 
 ![ZenQuotes.io Logo](https://zenquotes.io/img/zen-quotes-icon-180.png)
 
