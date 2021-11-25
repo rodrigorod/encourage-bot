@@ -45,12 +45,22 @@ async def on_ready():
   print('We have logged in as {0.user}'
   .format(client))
 
+  # Set bot activity
+  await client.change_presence(activity=discord.Game('$help'))
+
   @client.event
   async def on_message(message):
     if message.author == client.user:
       return
 
     msg = message.content
+
+    # Help message
+
+    if msg.startswith('$help'):
+      await message.channel.send(
+        'Here is a list of all the commands available : \n\n Create a new encouragement message : \n **`$new [encouragement]`** \n List all encouragement messages : \n **`$list`** \n Delete an encouragement : \n **`$del [index]`** \n Enable/Disable responding : \n **`$responding [true|false]`**'
+      )
 
     if db['responding']:
       options = starter_encouragements
