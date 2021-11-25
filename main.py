@@ -4,6 +4,7 @@ import requests
 import json
 import random
 from replit import db
+from keep_alive import keep_alive
 
 token = os.environ['TOKEN']
 client = discord.Client()
@@ -107,4 +108,5 @@ async def on_ready():
         db['responding'] = False
         await message.channel.send('Responding is off.')
 
+keep_alive()
 client.run(token)
